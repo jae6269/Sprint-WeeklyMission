@@ -13,7 +13,7 @@ function SortButton({ id, text, handleClick, isclickedProp = false }) {
   };
 
   return (
-    <StyledButton onClick={handleSendSelectedFolder} isclicked={isclickedProp}>
+    <StyledButton onClick={handleSendSelectedFolder} $isclicked={isclickedProp}>
       {text}
     </StyledButton>
   );
@@ -27,10 +27,10 @@ const StyledButton = styled.button`
   border-radius: 5px;
   border: 1px solid var(--Linkbrary-primary-color, #6d6afe);
   background: ${(props) =>
-    props.isclicked
+    props.$isclicked
       ? 'var(--Linkbrary-primary-color)'
       : 'var(--Linkbrary-white)'}; // 배경색 변경
-  color: ${(props) => (props.isclicked ? 'white' : 'black')}; // 글자색 변경
+  color: ${(props) => (props.$isclicked ? 'white' : 'black')}; // 글자색 변경
   cursor: pointer;
 
   font-family: Pretendard;
