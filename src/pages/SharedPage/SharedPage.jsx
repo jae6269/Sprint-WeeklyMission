@@ -7,9 +7,9 @@ function Shared() {
   return (
     <>
       <Header url={SAMPLE_USER_URL}></Header>
-      <Profile />
-      <CardList />
-      <Footer />
+      <Profile></Profile>
+      <CardList></CardList>
+      <Footer></Footer>
     </>
   );
 }
