@@ -28,7 +28,7 @@ function FolderOptionBar({ text, selectedFolderId }) {
     const purpose = {
       purpose: FOLDER_DELETE,
       id: selectedFolderId,
-      folderName: text,
+      name: text,
     };
     handleDeleteModalOpen(purpose);
   };
@@ -40,6 +40,7 @@ function FolderOptionBar({ text, selectedFolderId }) {
     };
     handleShareModalOpen(purpose);
   };
+
   const buttonProps = [
     {
       id: 1,
