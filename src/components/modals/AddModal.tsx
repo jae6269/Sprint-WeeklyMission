@@ -14,11 +14,10 @@ import { useContext, useState } from 'react';
 import { ModalContext } from '../../pages/FolderPage/FolderPage';
 import useFoldersData from '../../hooks/useFoldersData';
 import { USERS_FOLDERS_URL } from '../../constants/urls';
-import { ClickFolderButton } from '../../types/functionsType';
 
 function AddModal() {
   const [clickedFolderId, setClickedFolderId] = useState<number>();
-  const { modalPurpose, handleModalClose } = useContext(ModalContext);
+  const { modalPurpose, handleModalClose } = useContext(ModalContext)!;
 
   const folders = useFoldersData(USERS_FOLDERS_URL);
 
@@ -92,7 +91,7 @@ const FolderInfo = styled.div`
   gap: 8px;
 `;
 
-const FolderName = styled.span`
+const FolderName = styled.span<{ $isClicked: boolean }>`
   color: ${({ $isClicked }) =>
     $isClicked
       ? 'var(--Linkbrary-primary-color, #6D6AFE)'

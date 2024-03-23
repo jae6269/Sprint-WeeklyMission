@@ -18,7 +18,7 @@ import {
 } from '../../utils/shareLinkFunctions';
 
 function ShareModal() {
-  const { modalPurpose, handleModalClose } = useContext(ModalContext);
+  const { modalPurpose, handleModalClose } = useContext(ModalContext)!;
 
   const name = modalPurpose.folderName;
   const folderId = modalPurpose.id;
@@ -83,7 +83,7 @@ const Button = styled.button`
   cursor: pointer;
 `;
 
-const ButtonIcon = styled.img`
+const ButtonIcon = styled.img<{ background: string }>`
   display: flex;
   padding: 12px;
   justify-content: center;
@@ -91,7 +91,7 @@ const ButtonIcon = styled.img`
   gap: 10px;
 
   border-radius: 37.333px;
-  background: ${(background) => background};
+  background: ${({ background }) => background};
 `;
 
 const ButtonName = styled.p`
